@@ -1,0 +1,310 @@
+#Name : Ryan Kane
+#Date : 3/4/2021
+#Description : Draw dice on the screen
+
+import turtle
+import random
+
+def main():
+
+    #Set Variables
+    gabe = turtle.Turtle()
+    win = turtle.Screen()
+    win.bgcolor("tomato")
+    turtle.setup(900, 500)
+    width = 100
+    X = -575
+    Y = 200
+    diceNumber = 1
+    dotWidth = width // 6
+    turtle.speed(100)
+    turtle.tracer(0, 0)
+    
+    for p in range (6):
+        #Draw Dice
+        gabe.penup()
+        X += 1.5 * width
+        gabe.goto(X, Y)
+        gabe.pendown()
+        p -= 1
+        gabe.begin_fill()
+        for q in range (4):
+            #Draw Square
+            gabe.fillcolor("white")
+            gabe.pencolor("white")
+            gabe.pendown()
+            gabe.forward(width)
+            gabe.right(90)
+            q -= 1
+        gabe.end_fill()
+        gabe.begin_fill()
+        #Draw Dice Number
+        gabe.fillcolor("black")
+        gabe.pencolor("black")
+        gabe.penup()
+        if diceNumber == 1:
+            gabe.goto(X + 50, Y - 60)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            diceNumber += 1
+        elif diceNumber == 2:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            diceNumber += 1
+        elif diceNumber == 3:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 50, Y - 60)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            diceNumber += 1
+        elif diceNumber == 4:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            gabe.penup()
+            gabe.goto(X + 20, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            diceNumber += 1
+        elif diceNumber == 5:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            gabe.penup()
+            gabe.goto(X + 20, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 50, Y - 60)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            diceNumber += 1
+        else:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.end_fill()
+            gabe.goto(X + 20, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.end_fill()
+            gabe.goto(X + 20, Y - 60)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 60)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+
+    X = -275
+    Y = -50
+    rollNumber = 0
+    
+    for p in range (2):
+        #Draw Dice
+        gabe.penup()
+        X += 1.5 * width
+        gabe.goto(X, Y)
+        gabe.pendown()
+        p -= 1
+        diceNumber = random.randint(1,6)
+        gabe.begin_fill()
+        for q in range (4):
+            #Draw Square
+            gabe.fillcolor("white")
+            gabe.pencolor("white")
+            gabe.pendown()
+            gabe.forward(width)
+            gabe.right(90)
+            q -= 1
+        gabe.end_fill()
+        gabe.begin_fill()
+        #Draw Dice Number
+        gabe.fillcolor("black")
+        gabe.pencolor("black")
+        gabe.penup()
+        if diceNumber == 1:
+            gabe.goto(X + 50, Y - 60)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+        elif diceNumber == 2:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+        elif diceNumber == 3:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 50, Y - 60)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+        elif diceNumber == 4:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            gabe.penup()
+            gabe.goto(X + 20, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+        elif diceNumber == 5:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            gabe.penup()
+            gabe.goto(X + 20, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 50, Y - 60)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+        else:
+            gabe.penup()
+            gabe.goto(X + 80, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+            gabe.penup()
+            gabe.goto(X + 20, Y - 90)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.end_fill()
+            gabe.goto(X + 20, Y - 30)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 90)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.end_fill()
+            gabe.goto(X + 20, Y - 60)
+            gabe.pendown()
+            gabe.begin_fill()
+            gabe.circle(width // 10)
+            gabe.penup()
+            gabe.goto(X + 80, Y - 60)
+            gabe.pendown()
+            gabe.circle(width // 10)
+            gabe.end_fill()
+        rollNumber += diceNumber
+        if rollNumber <= 7:
+            value = rollNumber - 1
+        else:
+            value = 13 - rollNumber
+        percent = format((value/36) * 100, ".4f")
+    print("The probality of rolling a ", rollNumber, " is", percent,"%")
+    turtle.mainloop()
+        
+if __name__ == "__main__":
+    main()
